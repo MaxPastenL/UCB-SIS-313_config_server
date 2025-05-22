@@ -1,5 +1,5 @@
 
-
+app.eureka-server: localhost
 
 eureka:
   client:
