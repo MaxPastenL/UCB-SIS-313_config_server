@@ -25,14 +25,3 @@ spring:
       - "classpath:application-openapi-student.yml"
       - "classpath:application-openapi-user.yml"
 
-app.eureka-server: eureka-server
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${app.eureka-server}:8761/eureka/
-    initialInstanceInfoReplicationIntervalSeconds: 5
-    registryFetchIntervalSeconds: 5
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
