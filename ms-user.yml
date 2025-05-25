@@ -32,7 +32,6 @@ spring:
       - "classpath:application-openapi-student.yml"
       - "classpath:application-openapi-user.yml"
 
-encrypt.key: mySecretKey
 ---
 spring.config.activate.on-profile: docker
 
