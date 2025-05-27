@@ -13,10 +13,10 @@ jwt:
   
 spring:
   security:
-      oauth2:
-        resourceserver:
-          jwt:
-            secret-key: ${jwt.secret}
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: mi-clave-secreta-1234567890
   cloud:
     gateway:
       default-filters:
