@@ -8,8 +8,15 @@ server.ssl:
   key-store-password: password
   key-alias: localhost
 
-
+jwt:
+  secret: mi-clave-secreta-1234567890
+  
 spring:
+  security:
+      oauth2:
+        resourceserver:
+          jwt:
+            secret-key: ${jwt.secret}
   cloud:
     gateway:
       default-filters:
