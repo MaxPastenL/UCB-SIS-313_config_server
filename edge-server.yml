@@ -9,14 +9,14 @@ server.ssl:
   key-alias: localhost
 
 jwt:
-  secret: mi-clave-secreta-1234567890
+  secret: mi-super-clave-jwt-muy-segura-12345678
   
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-          secret-key: mi-clave-secreta-1234567890
+          secret-key: mi-super-clave-jwt-muy-segura-12345678
   cloud:
     gateway:
       default-filters:
