@@ -72,25 +72,25 @@ spring:
             - StripPrefix=1
 
 
-        #- id: eureka-web-start
-        #  uri: http://${app.eureka-server}:8761
-        #  predicates:
-        #    - Path=/eureka/web
-        #  filters:
-        #    - SetPath=/
+        - id: eureka-web-start
+          uri: http://${app.eureka-server}:8761
+          predicates:
+            - Path=/eureka/web
+          filters:
+            - SetPath=/
 
 
-        #- id: eureka-web-other
-        #  uri: http://${app.eureka-server}:8761
-        #  predicates:
-        #    - Path=/eureka/**
+        - id: eureka-web-other
+          uri: http://${app.eureka-server}:8761
+          predicates:
+            - Path=/eureka/**
 
 
 
 # Configuración para exponer endpoints de administración
-#management.endpoint.gateway.enabled: true
-#management.endpoint.health.show-details: "ALWAYS"
-#management.endpoints.web.exposure.include: "*"
+management.endpoint.gateway.enabled: true
+management.endpoint.health.show-details: "ALWAYS"
+management.endpoints.web.exposure.include: "*"
 
 # Configuración de logging para ayudar en la depuración
 logging:
