@@ -12,10 +12,10 @@ spring:
     name: ms-user
 
   security:
-      oauth2:
-        resourceserver:
-          jwt:
-            secret-key: ${jwt.secret}
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: mi-clave-secreta-1234567890
 
   datasource:
     #url: jdbc:postgresql://localhost:5432/ms_user_hazmelaucb_db
