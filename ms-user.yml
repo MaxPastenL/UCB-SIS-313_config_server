@@ -11,11 +11,11 @@ spring:
   application:
     name: ms-user
 
-  security:
-      oauth2:
-        resourceserver:
-          jwt:
-            secret-key: ${jwt.secret}
+  #security:
+  #    oauth2:
+  #      resourceserver:
+  #        jwt:
+  #          secret-key: ${jwt.secret}
 
   datasource:
     #url: jdbc:postgresql://localhost:5432/ms_user_hazmelaucb_db
