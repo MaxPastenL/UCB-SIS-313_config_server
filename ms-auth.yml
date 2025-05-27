@@ -2,7 +2,9 @@
 server:
   port: ${SERVER_PORT:7001}
 
-
+jwt:
+  secret: mi-clave-secreta-1234567890
+  
 spring:
   application:
     name: ms-auth
