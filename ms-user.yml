@@ -4,13 +4,18 @@ server:
 #spring.datasource.url: jdbc:postgresql://localhost:5432/ms_user_hazmelaucb_db
 #spring.datasource.username: postgres
 #spring.datasource.password: '{cipher}a653d46baf8307a2256ad22a1c0fcc78dc783829c126a842d74c100adec3f0b9'
-
+jwt:
+  secret: mi-clave-secreta-1234567890
 
 spring:
   application:
     name: ms-user
 
-
+  security:
+      oauth2:
+        resourceserver:
+          jwt:
+            secret-key: ${jwt.secret}
 
   datasource:
     #url: jdbc:postgresql://localhost:5432/ms_user_hazmelaucb_db
