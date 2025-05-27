@@ -3,12 +3,6 @@ server:
   port: ${SERVER_PORT:7001}
 
 
-logging:
-  level:
-    org.springdoc: DEBUG
-
-
-
 spring:
   application:
     name: ms-auth
@@ -18,7 +12,7 @@ spring:
     #password: pass123
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    password: '{cipher}7cfc0d39c02f3db1f7119f88164d2826433fafda3777659925982ea4cd16f5be'
     driver-class-name: org.postgresql.Driver
   config:
     import:
@@ -28,14 +22,6 @@ spring:
       - "classpath:application-openapi-admin.yml"
       - "classpath:application-openapi-session.yml"
 
-app.eureka-server: eureka-server
+---
+spring.config.activate.on-profile: docker
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${app.eureka-server}:8761/eureka/
-    initialInstanceInfoReplicationIntervalSeconds: 5
-    registryFetchIntervalSeconds: 5
-  instance:
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
