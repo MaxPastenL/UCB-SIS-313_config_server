@@ -106,4 +106,3 @@ logging:
     '[org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator]': INFO
     '[org.springframework.cloud.gateway]': TRACE
     '[org.springframework.security]': DEBUG
-
