@@ -9,7 +9,7 @@ spring:
   application:
     name: ms-rating
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ms-rating-db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db-rating:5432/ms-rating-db}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
     password: '{cipher}e5d596d9a3ead362d030a41afaa130bd95ac7e2120246e33a7e7ee1cdc03a8b141b283cdbee52741241f5288139bfc0a'
     driver-class-name: org.postgresql.Driver
