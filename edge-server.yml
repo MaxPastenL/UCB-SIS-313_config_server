@@ -77,6 +77,13 @@ spring:
             - Path=/ms-rating/**
           filters:
             - StripPrefix=1
+        #ruta para ms-report
+        - id: ms-report
+          uri: lb://ms-report
+          predicates:
+            - Path=/ms-report/**
+          filters:
+            - StripPrefix=1
 
 
         - id: eureka-web-start

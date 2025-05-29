@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:7010}
+
+jwt:
+  secret: mi-super-clave-jwt-muy-segura-12345678
+
+spring:
+  application:
+    name: ms-report
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          secret-key: mi-super-clave-jwt-muy-segura-12345678
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: '{cipher}7cfc0d39c02f3db1f7119f88164d2826433fafda3777659925982ea4cd16f5be'
+    driver-class-name: org.postgresql.Driver
+
+  config:
+    import:
+      - "classpath:application-openapi-report.yml"
+
+---
+spring.config.activate.on-profile: docker
