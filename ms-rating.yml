@@ -18,10 +18,6 @@ spring:
       resourceserver:
         jwt:
           secret-key: mi-super-clave-jwt-muy-segura-12345678
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka/
 config:
   import:
     - "classpath:application-openapi-rating.yml"
