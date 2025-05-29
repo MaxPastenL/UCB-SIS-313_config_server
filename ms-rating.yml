@@ -1,47 +1,27 @@
 server:
   port: ${SERVER_PORT:5008}
 
+
+jwt:
+  secret: mi-super-clave-jwt-muy-segura-12345678
+  
 spring:
   application:
     name: ms-rating
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ms-rating-db}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    password: '{cipher}aqui_va_tu_password_cifrado'
+    password: '{cipher}e5d596d9a3ead362d030a41afaa130bd95ac7e2120246e33a7e7ee1cdc03a8b141b283cdbee52741241f5288139bfc0a'
     driver-class-name: org.postgresql.Driver
   security:
     oauth2:
       resourceserver:
         jwt:
           secret-key: mi-super-clave-jwt-muy-segura-12345678
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
-springdoc:
-  api-docs:
-    enabled: true
-  swagger-ui:
-    enabled: true
-    path: /swagger-ui.html
-  show-actuator: true
+config:
+  import:
+    - "classpath:application-openapi-rating.yml"
 
-logging:
-  level:
-    org.springdoc: DEBUG
-
-app:
-  eureka-server: eureka-server
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://${app.eureka-server}:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-    initial-instance-info-replication-interval-seconds: 5
-    registry-fetch-interval-seconds: 5
-  instance:
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 5
+---
+spring.config.activate.on-profile: docker
