@@ -17,7 +17,7 @@ spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
-    password: '{cipher}7cfc0d39c02f3db1f7119f88164d2826433fafda3777659925982ea4cd16f5be'
+    password: '{cipher}7dc8af1a1e025b13d9eb2a307ef250ffad474d3e8ddaa68d38f805acab4c57cf'
     driver-class-name: org.postgresql.Driver
 
   config:
