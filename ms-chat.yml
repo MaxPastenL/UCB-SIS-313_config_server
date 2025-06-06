@@ -18,8 +18,8 @@ spring:
 
   datasource:
     # CAMBIADO: Apunta a la base de datos específica para ms-chat
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
+    url: ${SPRING_DATASOURCE_URL:postgresql://db-chat:5432/chat_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
     # RECOMENDACIÓN: Aquí deberías poner la contraseña encriptada con tu config-server
     password: '{cipher}7cfc0d39c02f3db1f7119f88164d2826433fafda3777659925982ea4cd16f5be'
     driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:org.postgresql.Driver}
