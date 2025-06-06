@@ -85,6 +85,13 @@ spring:
           filters:
             - StripPrefix=1
 
+        - id: ms-chat
+          uri: lb://ms-chat
+          predicates:
+              - Path=/ms-chat/**
+          filters:
+              - StripPrefix=1
+
 
         - id: eureka-web-start
           uri: http://${app.eureka-server}:8761
