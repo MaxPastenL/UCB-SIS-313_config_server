@@ -29,4 +29,7 @@ spring:
       - "classpath:application-openapi-mschat.yml"
 
 ---
-spring.config.activate.on-profile: docker
+spring:
+  config:
+    activate:
+      on-profile: docker
