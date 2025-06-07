@@ -1,11 +1,9 @@
 server:
   port: ${SERVER_PORT:5066}
 
-
 jwt:
   secret: mi-super-clave-jwt-muy-segura-12345678
 
-#para poner el nombre y que el config de identificque
 spring:
   application:
     name: ms-chat
@@ -15,12 +13,15 @@ spring:
         jwt:
           secret-key: mi-super-clave-jwt-muy-segura-12345678
 
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: config-usr
+      password: SIS313ucb
 
   datasource:
-    # CAMBIADO: Apunta a la base de datos específica para ms-chat
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
-    # RECOMENDACIÓN: Aquí deberías poner la contraseña encriptada con tu config-server
     password: '{cipher}7cfc0d39c02f3db1f7119f88164d2826433fafda3777659925982ea4cd16f5be'
     driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:org.postgresql.Driver}
 
@@ -29,7 +30,4 @@ spring:
       - "classpath:application-openapi-mschat.yml"
 
 ---
-spring:
-  config:
-    activate:
-      on-profile: docker
+spring.config.activate.on-profile: docker
