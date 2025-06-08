@@ -21,6 +21,12 @@ spring:
 config:
   import:
     - "classpath:application-openapi-rating.yml"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
 
 ---
 spring.config.activate.on-profile: docker
